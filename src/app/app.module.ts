@@ -10,6 +10,10 @@ import {AppHeaderComponent} from './layouts/full/header/header.component';
 import {AppSidebarComponent} from './layouts/full/sidebar/sidebar.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {MaterialModule} from "./shared/material-module";
+import {FlexLayoutModule} from "@angular/flex-layout";
+import {SharedModule} from "./shared/shared.module";
+
 
 
 @NgModule({
@@ -27,8 +31,9 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
-
-
+    MaterialModule,
+    FlexLayoutModule,
+    SharedModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
