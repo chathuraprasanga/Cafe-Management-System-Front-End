@@ -13,6 +13,8 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MaterialModule} from "./shared/material-module";
 import {FlexLayoutModule} from "@angular/flex-layout";
 import {SharedModule} from "./shared/shared.module";
+import {HttpClientModule} from "@angular/common/http";
+import { SignupComponent } from './signup/signup.component';
 
 
 
@@ -23,7 +25,8 @@ import {SharedModule} from "./shared/shared.module";
     BestSellerComponent,
     FullComponent,
     AppHeaderComponent,
-    AppSidebarComponent
+    AppSidebarComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
@@ -34,6 +37,8 @@ import {SharedModule} from "./shared/shared.module";
     MaterialModule,
     FlexLayoutModule,
     SharedModule,
+    HttpClientModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
