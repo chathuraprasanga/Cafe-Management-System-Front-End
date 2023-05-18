@@ -4,27 +4,31 @@ import {BrowserModule} from '@angular/platform-browser';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {BestSellerComponent} from './best-seller/best-seller.component';
-import {DashboardComponent} from './dashboard/dashboard.component';
 import {HomeComponent} from './home/home.component';
-import {SharedComponent} from './shared/shared.component';
 import {FullComponent} from './layouts/full/full.component';
-import {HeaderComponent} from './layouts/full/header/header.component';
-import {SidebarComponent} from './layouts/full/sidebar/sidebar.component';
+import {AppHeaderComponent} from './layouts/full/header/header.component';
+import {AppSidebarComponent} from './layouts/full/sidebar/sidebar.component';
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    BestSellerComponent,
-    DashboardComponent,
     HomeComponent,
-    SharedComponent,
+    BestSellerComponent,
     FullComponent,
-    HeaderComponent,
-    SidebarComponent
+    AppHeaderComponent,
+    AppSidebarComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -5,6 +5,6 @@ import { Component } from '@angular/core';
   templateUrl: './sidebar.component.html',
   styleUrls: []
 })
-export class SidebarComponent {
+export class AppSidebarComponent {
 
 }
