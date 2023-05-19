@@ -6,8 +6,6 @@ import {SnackbarService} from "../services/snackbar.service";
 import {MatDialogRef} from "@angular/material/dialog";
 import {NgxUiLoaderService} from "ngx-ui-loader";
 import {GlobalConstants} from "../shared/global-constants";
-import {response} from "express";
-import {error} from "@angular/compiler-cli/src/transformers/util";
 
 @Component({
   selector: 'app-signup',
@@ -17,7 +15,7 @@ import {error} from "@angular/compiler-cli/src/transformers/util";
 export class SignupComponent implements OnInit{
 
   password = true;
-  confirmpassword = true;
+  confirmPassword = true;
   signupForm:any = FormGroup;
   responseMessage:any;
 
