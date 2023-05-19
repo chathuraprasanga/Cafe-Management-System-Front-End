@@ -31,7 +31,7 @@
 
       <mat-form-field  fxFlex>
         <mat-label>Email</mat-label>
-        <input matInput formControlName="email" required>
+        <input matInput formControlName="email" type="text" required>
         <mat-error *ngIf="signupForm.controls.email.touched && signupForm.controls.email.invalid">
           <span *ngIf="signupForm.controls.email.errors.required">This field is mandatory.</span>
           <span *ngIf="signupForm.controls.email.errors.pattern">This field is invalid.</span>
