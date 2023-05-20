@@ -18,7 +18,7 @@ export class RouteGuardServiceService {
 
   canActivate(router:ActivatedRouteSnapshot):boolean{
     let expectedRoleArray = router.data;
-    expectedRoleArray = expectedRoleArray.expectedRole;
+    expectedRoleArray = expectedRoleArray["expectedRole"];
 
     const token:any = localStorage.getItem('token');
 
@@ -32,7 +32,7 @@ export class RouteGuardServiceService {
 
     let expectedRole = '';
 
-    for(let i = 0; i<expectedRoleArray.length;i++){
+    for(let i = 0; i<expectedRoleArray['length'];i++){
       if (expectedRoleArray[i] == tokenPayload.role){
         expectedRole  = tokenPayload.role;
       }
