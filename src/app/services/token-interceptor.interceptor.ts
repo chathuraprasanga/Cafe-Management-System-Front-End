@@ -1,31 +1,33 @@
 import { Injectable } from '@angular/core';
-import {HttpEvent, HttpHandler, HttpInterceptor, HttpRequest, HttpResponse} from "@angular/common/http";
-import {Observable} from "rxjs";
+import {
+  HttpRequest,
+  HttpHandler,
+  HttpEvent,
+  HttpInterceptor, HttpErrorResponse
+} from '@angular/common/http';
+import { Observable } from 'rxjs';
+import {Router} from "@angular/router";
 import {catchError} from "rxjs/operators";
 import {throwError} from "rxjs";
-import {Router} from "@angular/router";
-
-@Injectable({
-  providedIn: 'root'
-})
 
 @Injectable()
-export class TokenInterceptorService implements HttpInterceptor{
+export class TokenInterceptorInterceptor implements HttpInterceptor {
 
   constructor(
-    private router : Router
-  ) { }
+    private router : Router,
+  ) {}
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     const token = localStorage.getItem('token');
     if (token) {
       request = request.clone({
-        setHeaders: {Authorization: 'Bearer $(token)'}
+        setHeaders: {Authorization: `Bearer ${token}`}
       });
     }
+
     return next.handle(request).pipe(
       catchError((err) => {
-        if (err instanceof HttpResponse) {
+        if (err instanceof HttpErrorResponse) {
           console.log(err.url);
           if (err.status === 401 || err.status === 403) {
             if (this.router.url === '/') {
