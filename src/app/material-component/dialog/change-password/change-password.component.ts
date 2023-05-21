@@ -45,7 +45,7 @@ export class ChangePasswordComponent implements OnInit{
     }
   }
 
-  handlePasswordChange(){
+  handlePasswordChangeSubmit(){
     this.ngxService.start();
     var formData = this.changePasswordForm.value;
     var data = {
