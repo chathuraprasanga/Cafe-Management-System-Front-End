@@ -4,7 +4,6 @@ import {UserService} from "../../../services/user.service";
 import {MatDialogRef} from "@angular/material/dialog";
 import {NgxUiLoaderService} from "ngx-ui-loader";
 import {SnackbarService} from "../../../services/snackbar.service";
-import {response} from "express";
 import {GlobalConstants} from "../../../shared/global-constants";
 
 @Component({
@@ -52,7 +51,7 @@ export class ChangePasswordComponent implements OnInit{
       oldPassword: formData.oldPassword,
       newPassword: formData.newPassword,
       confirmPassword: formData.confirmPassword
-    }
+    };
     this.userService.changePassword(data).subscribe((response:any)=>{
       this.ngxService.stop();
       this.responseMessage = response?.message;
